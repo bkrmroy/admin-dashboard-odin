@@ -10,16 +10,22 @@ body{
 
 body{
     display: grid;
-    grid-template-columns: 250px 2fr 0.6fr;
+    grid-template-columns: 220px 2fr 0.6fr;
     grid-template-rows: auto 1fr ;
     min-height: 100vh;
 }
-.navbar{
+.navbar, .toolbox{
+
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+
 }
 .sidebar{
     grid-row: 1 / 4;
-    background-color: #1992D4;
+    background-color: #FF5678;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -57,14 +63,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 16px;
+
 }
 input{
     width: 90%;
     height: 24px;
     border-radius: 16px;
     border-style: none;
-    background-color: #E2E8F0;
+    background-color: #ffe7e7;
 }
 .admin-name{
     font-weight: bold;
@@ -83,7 +89,7 @@ input{
 }
 .header-bottom button{
     width: 80px;
-    background-color: #1992D4;
+    background-color: #ff5f7f;
     color: white;
     padding: 8px;
     text-align: center;
@@ -91,10 +97,13 @@ input{
     border-style: none;
     border-radius: 32px;
     font-weight: bold;
+    cursor: pointer;
 }
 .header-bottom-text{
-    display: flex;
+    display: grid;
     gap: 16px;
+    grid-template-columns: auto auto;
+    align-items: center;
 }
 .greeting-text{
     font-weight: bold;
@@ -108,7 +117,7 @@ input{
 
 /* all about projects*/
 .projects{
-    background-color: #E2E8F0;
+    background-color: #ffe7e7;
     padding: 32px;
     grid-row: 2 / 4;
 }
@@ -151,20 +160,16 @@ input{
     margin-top: 2rem;
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 16px;
 }
 
 .anc-and-trend{
-    background-color: #E2E8F0;
+    background-color: #ffe7e7;
     grid-row: 2/3;
     padding: 32px;
     padding-left: 0;
 }
 /*announcemen*/
-.announcements{
-    background-color: #E2E8F0;
-   
-}
 .anc-header{
     font-size: 1.5rem;
     font-weight: bold;
@@ -218,10 +223,44 @@ input{
     grid-template-columns: auto 1fr;
     align-items: center;
     column-gap: 8px;
+    row-gap: 4px;
+    align-content: center;
 }
 .trending-box > div > .logo{
     grid-row: 1/3;
 }
 .trending-box > div > .tag{
     color: rgb(83, 83, 83);
+}
+
+/* icons */
+#icon{
+    height: 1.5rem;
+}
+.navbar > a, .toolbox > a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar > a > svg, .toolbox > a > svg{
+    fill: white;
+}
+.project-box:hover{
+    transform: scale(1.05);
+}
+button:hover{
+    transform: scale(0.9);
+}
+
+.trending-box div .title{
+}
+.trending-box div .tag{
+    font-size: 0.9rem;
+    color: rgb(77, 76, 76);
+}
+.trending-box img{
+    height: 3rem;
 }
